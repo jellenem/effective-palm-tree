@@ -1,0 +1,43 @@
+{
+  "description": "TEst",
+  "endpoint": "MySQLMIA.LW.endpoint",
+  "endpointType": "MYSQL",
+  "folder": "MCA-demo",
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "WEEK",
+  "highRiskThreshold": 5,
+  "node": "AnowEngine.Mysql.lbrr",
+  "owner": "lpopov",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "MYSQL",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "tags": 
+  [
+    "MCA-DEMO"
+  ],
+  "taskType": "RDBMS_SQL_STATEMENT",
+  "title": "mca-demo",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "rowsVariableLevel": "SELF",
+    "selectResultAction": "ALL_ROWS_AS_JSON_VARIABLE",
+    "selectResultVariableLevel": "SELF",
+    "statement": "SELECT configKey,configKeyValue,configKeyComment FROM `mca-mastersettings` ORDER BY configKey",
+    "statementType": "SELECT"
+  },
+  "designParameters": 
+  [
+    {
+      "editorType": "OUTPUT",
+      "name": "SET_DEBUG_JSON",
+      "outputFormat": "JSON",
+      "title": "SET_DEBUG_JSON",
+      "outputDefinition": {
+        "dataPath": "$[?(@.configKey=='SET_DEBUG')].configKeyValue"
+      }
+    }
+  ]
+}
