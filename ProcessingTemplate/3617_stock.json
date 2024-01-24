@@ -1,0 +1,54 @@
+{
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "WEEK",
+  "highRiskThreshold": 5,
+  "owner": "jellene",
+  "priority": "0",
+  "processingType": "WORKFLOW",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "tags": 
+  [
+    "JELLE"
+  ],
+  "workflowType": "FOR_EACH",
+  "customFieldValues": {
+    "CF1": "abc",
+    "CostCenter": "123-321-344648957459867",
+    "NAZWA_BIZNESOWA": "NB",
+    "NR_INSTANCJI": "123",
+    "ZnacznikPrzyrostu": "111111111111"
+  },
+  "processingCommand": {
+    "forEachCollection": "1",
+    "forEachCollectionType": "TEXT"
+  },
+  "items": 
+  [
+    {
+      "disallowConcurrentExecution": false,
+      "highRiskStatisticMethod": "PERCENT",
+      "highRiskStatisticPeriod": "WEEK",
+      "highRiskThreshold": 5,
+      "name": "sleep_0",
+      "processingTemplate": "sleep_0",
+      "serverNode": "ROX_OS",
+      "statisticMethod": "AVERAGE",
+      "statisticPeriod": "MONTH",
+      "title": "sleep_0",
+      "dependencies": 
+      [
+        {
+          "dependencyType": "RESOURCE",
+          "name": "STOCK_80",
+          "processingStatus": "COMPLETED",
+          "processingType": "WORKFLOW",
+          "resource": "STOCK_80",
+          "resourcePermits": "1",
+          "resourceType": "STOCK",
+          "workflowType": "FOR_EACH"
+        }
+      ]
+    }
+  ]
+}
