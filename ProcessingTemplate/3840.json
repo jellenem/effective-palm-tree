@@ -1,0 +1,65 @@
+{
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "WEEK",
+  "highRiskThreshold": 5,
+  "owner": "jellene",
+  "priority": "0",
+  "processingType": "WORKFLOW",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "workflowType": "STANDARD",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+  },
+  "dependencies": 
+  [
+    {
+      "dependencyType": "RESOURCE",
+      "name": "FINREP.EMIR.ARM_OSC_COMM_XML_LOOP",
+      "processingStatus": "COMPLETED",
+      "processingType": "WORKFLOW",
+      "resource": "FINREP.EMIR.ARM_OSC_COMM_XML_LOOP",
+      "resourcePermits": "1",
+      "resourceType": "STOCK",
+      "workflowType": "STANDARD"
+    }
+  ],
+  "items": 
+  [
+    {
+      "disallowConcurrentExecution": false,
+      "highRiskStatisticMethod": "PERCENT",
+      "highRiskStatisticPeriod": "WEEK",
+      "highRiskThreshold": 5,
+      "name": "JM_WIN_call_another",
+      "processingTemplate": "JM_WIN_call_another",
+      "statisticMethod": "AVERAGE",
+      "statisticPeriod": "MONTH",
+      "title": "JM_WIN_call_another"
+    },
+    {
+      "disallowConcurrentExecution": false,
+      "highRiskStatisticMethod": "PERCENT",
+      "highRiskStatisticPeriod": "WEEK",
+      "highRiskThreshold": 5,
+      "name": "JM_WIN_call_another.1",
+      "processingTemplate": "JM_WIN_call_another",
+      "statisticMethod": "AVERAGE",
+      "statisticPeriod": "MONTH",
+      "title": "JM_WIN_call_another.1",
+      "dependencies": 
+      [
+        {
+          "dependencyType": "PREDECESSOR",
+          "name": "JM_WIN_call_another",
+          "predecessor": "JM_WIN_call_another",
+          "processingStatus": "COMPLETED",
+          "processingType": "TASK",
+          "serverNodeType": "WINDOWS",
+          "taskType": "SH"
+        }
+      ]
+    }
+  ]
+}
