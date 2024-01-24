@@ -1,0 +1,96 @@
+{
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "WEEK",
+  "highRiskThreshold": 5,
+  "owner": "jellene",
+  "priority": "0",
+  "processingType": "WORKFLOW",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "tags": 
+  [
+    "Some_Tag"
+  ],
+  "workflowType": "FOR_EACH",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "forEachCollection": "1,2",
+    "forEachCollectionType": "TEXT"
+  },
+  "designParameters": 
+  [
+    {
+      "allowExpressions": true,
+      "defaultValue": "654",
+      "editorType": "NUMBER",
+      "hint": "any number",
+      "name": "number",
+      "required": true,
+      "title": "number"
+    },
+    {
+      "allowExpressions": true,
+      "defaultValue": "HI",
+      "editorType": "TEXT",
+      "hint": "freetext",
+      "name": "freetext",
+      "title": "freetext"
+    }
+  ],
+  "items": 
+  [
+    {
+      "disallowConcurrentExecution": false,
+      "highRiskStatisticMethod": "PERCENT",
+      "highRiskStatisticPeriod": "WEEK",
+      "highRiskThreshold": 5,
+      "name": "3092_B",
+      "processingTemplate": "3092_B",
+      "statisticMethod": "AVERAGE",
+      "statisticPeriod": "MONTH",
+      "title": "3092_B-${number}",
+      "actions": 
+      [
+        {
+          "processingActionType": "SET_SEMAPHORE_STATE",
+          "processingEventCategory": "PROCESSING",
+          "processingEventType": "PROCESSING_COMPLETED",
+          "processingCommand": {
+            "operator": "",
+            "resource": "3799-sem-${number}",
+            "timestampRelation": "EQ",
+            "timestampSelector": "SAME",
+            "value": "ON"
+          }
+        }
+      ]
+    },
+    {
+      "disallowConcurrentExecution": false,
+      "highRiskStatisticMethod": "PERCENT",
+      "highRiskStatisticPeriod": "WEEK",
+      "highRiskThreshold": 5,
+      "name": "3092_A",
+      "processingTemplate": "3092_A",
+      "statisticMethod": "AVERAGE",
+      "statisticPeriod": "MONTH",
+      "title": "3092_A-${number}",
+      "actions": 
+      [
+        {
+          "processingActionType": "SET_SEMAPHORE_STATE",
+          "processingEventCategory": "PROCESSING",
+          "processingEventType": "PROCESSING_COMPLETED",
+          "processingCommand": {
+            "operator": "",
+            "resource": "3799-sem-${number}",
+            "timestampRelation": "EQ",
+            "timestampSelector": "SAME",
+            "value": "ON"
+          }
+        }
+      ]
+    }
+  ]
+}
