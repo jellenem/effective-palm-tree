@@ -1,0 +1,12 @@
+{
+  "owner": "jellene",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "LINUX",
+  "taskType": "PYTHON",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "script": "#"
+  }
+}
