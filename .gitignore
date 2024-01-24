@@ -1,4 +1,4 @@
-*
+
 !/ProcessingTemplate/*.MCA-DEMO.*
 #!*.MCA-DEMO.* 
 !*.md 
