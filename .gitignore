@@ -1,4 +1,5 @@
-!*.MCA-DEMO.* 
+*
+!/ProcessingTemplate/*.MCA-DEMO.*
+#!*.MCA-DEMO.* 
 !*.md 
 !CODEOWNERS
-*
