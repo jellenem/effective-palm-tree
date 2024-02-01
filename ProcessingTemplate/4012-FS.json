@@ -1,0 +1,59 @@
+{
+  "highRiskStatisticMethod": "PERCENT",
+  "highRiskStatisticPeriod": "WEEK",
+  "highRiskThreshold": 5,
+  "node": "JELLENE_WIN_FM",
+  "owner": "jellene",
+  "priority": "0",
+  "processingType": "SERVICE",
+  "sensorType": "FILE_SENSOR",
+  "serverNodeType": "FILE_MANAGER",
+  "serviceType": "SENSOR",
+  "statisticMethod": "AVERAGE",
+  "statisticPeriod": "MONTH",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "createWorkDirectory": null,
+    "directory": "C:\\Incoming\\",
+    "file": "something_.*_something.csv",
+    "fileCharacterSet": "BINARY",
+    "ifNoFilesFound": "FAIL_AFTER_LAST_CHECK",
+    "orderType": "DATE_ASCENDING",
+    "patternMode": "REGEXP",
+    "processingTemplate": "4012-shell",
+    "reactionMode": "FILE_FOUND",
+    "reactionType": "ADD_PROCESSING",
+    "serviceMode": {
+      "duration": 70000,
+      "interval": 5000,
+      "runMode": "FOR"
+    },
+    "sign": true,
+    "skipSystemCheckForBackupDirectory": true,
+    "skipSystemCheckForSourceDirectory": true,
+    "skipSystemCheckForTargetDirectory": true,
+    "skipSystemCheckForTemporaryDirectory": true,
+    "skipSystemCheckForWorkDirectory": true,
+    "sourceFileAction": "SKIP_ARCHIVE",
+    "sourceType": "LOCAL_FILE_SYSTEM",
+    "targetType": "LOCAL_FILE_SYSTEM",
+    "timestampBaseDate": "PROCESSING_TIMESTAMP",
+    "verifySigning": true,
+    "workDirectory": null
+  },
+  "actions": 
+  [
+    {
+      "processingActionType": "PROCESSING_RUN_NOW",
+      "processingEventCategory": "PROCESSING",
+      "processingEventType": "PROCESSING_SENSOR_ITEM_FOUND",
+      "processingCommand": {
+        "includeContextVariables": true,
+        "includeTags": false,
+        "processingTemplate": "4012-shell",
+        "timestampSelector": "SAME"
+      }
+    }
+  ]
+}
